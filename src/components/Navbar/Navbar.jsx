@@ -1,5 +1,6 @@
 import { Routes, Route, NavLink } from 'react-router-dom';
 
+import EditResume from '../EditResume/EditResume';
 import Home from '../Home/Home';
 import Resume from '../CV/Resume';
 
@@ -14,6 +15,7 @@ const Navbar = () => {
             <Routes>
                 <Route path='/' element={<Home/>} />
                 <Route path='/resume' element={<Resume/>} />
+                <Route path='/editresume' element={<EditResume/>} />
             </Routes>
         </>
     );

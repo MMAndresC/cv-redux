@@ -1,12 +1,12 @@
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
-import personalReducer from './resume.reducers';
 
+import experienceReducer from './experience/experience.reducers';
 
 
 const rootReducer =  combineReducers({
-    personal: personalReducer,
+  experience: experienceReducer,
 });
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
