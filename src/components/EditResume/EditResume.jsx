@@ -1,26 +1,25 @@
-import {useState} from 'react';
+
+import {useDispatch, useSelector} from 'react-redux'
 import {useNavigate} from 'react-router-dom';
+
+import {modifyCategory, modifyOperation} from '../../redux/selectedOptions/selectedOption.actions';
+
 import FormExpEduc from './FormExpEduc';
 import FormSkills from './FormSkills';
 import ShowToAdd from './ShowToAdd';
 
-const INITIAL_STATE = {
-    category: 'skills',
-    operation: 'add',
-    skills: true,
-    categorySkill: 'FSDeveloper'
-};
+
 
 const EditResume = () => {
-    const [selection, setSelection] = useState(INITIAL_STATE);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const {options} = useSelector(state => state);
     
 
     const handleChange = (event) => {
-        const change = {...selection, operation: event.target.value}
-        setSelection(change);
+        dispatch(modifyOperation(event.target.value));
     }
-    
+
 
     return (
         <div>
@@ -29,18 +28,18 @@ const EditResume = () => {
                 <option value='edit'>Edit</option>
                 <option value='delete'>Delete</option>
             </select>
-            { selection.category === 'skills' 
+            { options.category === 'skills' 
                 ? <FormSkills/> 
-                : <FormExpEduc selection={selection}/>
+                : <FormExpEduc />
             }
             
             <div>
-                <button onClick={() => setSelection.category('skills')}>Skills</button>
-                <button onClick={() => setSelection.category('experience')}>Experience</button>
-                <button onClick={() => setSelection.category('education')}>Education</button>
+                <button onClick={() => dispatch(modifyCategory('skills'))}>Skills</button>
+                <button onClick={() => dispatch(modifyCategory('experience'))}>Experience</button>
+                <button onClick={() => dispatch(modifyCategory('education'))}>Education</button>
                 <div>
-                    { selection.operation === 'add' && <ShowToAdd selection={selection}/>}
-                </div>
+                    { options.operation === 'add' &&  <ShowToAdd />} 
+                </div> 
             </div>
             <button onClick={() => navigate('/resume')}>Go to Resume</button>
         </div>

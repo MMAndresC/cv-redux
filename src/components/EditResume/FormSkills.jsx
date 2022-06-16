@@ -1,19 +1,22 @@
 import {useForm} from 'react-hook-form';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import { addSkill } from '../../redux/skills/skills.actions';
+import { modifyCategorySkill } from '../../redux/selectedOptions/selectedOption.actions';
 
 const FormSkills = () => {
     const {register, handleSubmit} = useForm();
     const dispatch = useDispatch();
+    const {categorySkill} = useSelector(state => state.options);
+    
 
     const onSubmit = (formData) => {
-        //dispatch(formData); FALTA EL REDUCER
-        console.log(formData);
+        dispatch(addSkill(formData, categorySkill)); 
     }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <label>
-                <select name='name' {...register('name')}>
+                <select name='name' onChange={(event) => dispatch(modifyCategorySkill(event.target.value))}>
                     <option value='FSDeveloper' default>Full stack Developer</option>
                     <option value='BD'>BD</option>
                     <option value='learningLanguages'>Learning languages</option>

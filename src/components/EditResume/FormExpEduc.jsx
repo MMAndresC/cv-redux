@@ -1,12 +1,13 @@
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {useForm} from 'react-hook-form';
 
 import {addExperience} from '../../redux/experience/experience.actions';
 
-const FormResume = ({dataToModify}) => {
+const FormResume = () => {
     const { register, handleSubmit } = useForm();
     const dispatch = useDispatch();
-    console.log(dataToModify);
+    const {options} = useSelector(state => state);
+    
 
     const onSubmit = (formData) => {
         console.log(formData);
@@ -28,7 +29,7 @@ const FormResume = ({dataToModify}) => {
                 <span>Where:</span>
                 <input type='text' name='where' {...register('where')}></input>
             </label>
-            {dataToModify === 'experience' &&  
+            {options.category === 'experience' &&  
                 <label>
                 <span>Description:</span>
                 <input type='text' name='description' {...register('description')}></input>
