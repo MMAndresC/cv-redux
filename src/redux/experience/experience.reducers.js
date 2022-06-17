@@ -8,15 +8,14 @@ const INITIAL_STATE = {
 }
 
 const experienceReducer = (state = INITIAL_STATE, action) => {
-    const {experience} = state; 
     switch(action.type){
         case actions.ADD_EXPERIENCE: {
             return {...state, experience: [...experience, action.payload]};
         }
         case actions.DELETE_EXPERIENCE: {
-            let auxArray = [];
+            let auxArray = state.experience;
             action.payload.forEach((data) =>{
-                auxArray = experience.filter(exp => exp !== data);
+                auxArray = auxArray.filter(exp => exp !== data);
             });
             return {...state, experience: [...auxArray]}
         }

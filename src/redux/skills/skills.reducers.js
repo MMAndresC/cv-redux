@@ -6,8 +6,9 @@ import {CV} from '../../CV/CVFake';
 
 const {skills} = CV;
 const INITIAL_STATE = {
-    skills: skills
+    skills: skills, 
 };
+
 
 const skillsReducer = (state=INITIAL_STATE, action) => { //FALTA HACER LA DIVISION POR EL SELECT
     switch(action.type){
@@ -17,6 +18,17 @@ const skillsReducer = (state=INITIAL_STATE, action) => { //FALTA HACER LA DIVISI
             state.skills[selector].list.push(aux);
             return state;
         }
+        case actions.DELETE_SKILLS: { //aun no hecho
+            const {skillsToDelete, selector} = action.payload;
+            //console.log('lo de borrar',skillsToDelete);
+            //console.log('donde borrar',selector);
+            let auxArray = skills[selector]['list'];
+            skillsToDelete.forEach((data) =>{
+                auxArray = auxArray.filter(exp => exp !== data);
+            });
+            state.skills[selector].list = auxArray;
+            return state;
+        }            
         default:
             return state
     }

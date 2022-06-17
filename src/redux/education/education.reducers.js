@@ -11,6 +11,13 @@ const educationReducers = (state=INITIAL_STATE, action) => {
         case actions.ADD_EDUCATION : {
             return {...state, education: [...education, action.payload]}
         }
+        case actions.DELETE_EDUCATION: {
+            let auxArray = state.education;
+            action.payload.forEach((data) =>{
+                auxArray = auxArray.filter(exp => exp !== data);
+            });
+            return {...state, education: [...auxArray]}
+        }
         default:
             return state;
     }

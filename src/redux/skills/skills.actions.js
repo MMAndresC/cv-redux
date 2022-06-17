@@ -1,6 +1,7 @@
 
 
 export const ADD_SKILL = 'ADD_SKILL';
+export const DELETE_SKILLS = 'DELETE_SKILLS';
 
 export const addSkill = (newSkill, selector) => dispatch => {
     dispatch ({
@@ -11,3 +12,13 @@ export const addSkill = (newSkill, selector) => dispatch => {
         }
     });
 };
+
+export const deleteSkills = (skillsToDelete, selector) => dispatch => {
+    dispatch ({
+        type: DELETE_SKILLS,
+        payload: {
+            skillsToDelete,
+            selector
+        }
+    });
+}
