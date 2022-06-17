@@ -7,6 +7,7 @@ import {modifyCategory, modifyOperation} from '../../redux/selectedOptions/selec
 import FormExpEduc from './FormExpEduc';
 import FormSkills from './FormSkills';
 import ShowToAdd from './ShowToAdd';
+import ShowToDelete from './ShowToDelete';
 
 
 
@@ -39,6 +40,7 @@ const EditResume = () => {
                 <button onClick={() => dispatch(modifyCategory('education'))}>Education</button>
                 <div>
                     { options.operation === 'add' &&  <ShowToAdd />} 
+                    { options.operation === 'delete' &&  <ShowToDelete />} 
                 </div> 
             </div>
             <button onClick={() => navigate('/resume')}>Go to Resume</button>

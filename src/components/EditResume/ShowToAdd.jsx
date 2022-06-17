@@ -12,12 +12,9 @@ const ShowToAdd = () => {
             {options.category === 'experience' &&
                 experience.map((info, index) => {
                     return (
-                        <div key={`${index}-addexperience`}>
-                            <span>{info.date}</span>
-                            <span>{info.name}</span>
-                            <span>{info.where}</span>
-                            <p>{info.description}</p>
-                        </div>
+                        <p key={`${index}-addexperience`}>
+                            {`${info.date} / ${info.name}/ ${info.where}/ ${info.description}`}
+                        </p>
                     );
                 })
             }     
@@ -25,24 +22,24 @@ const ShowToAdd = () => {
             { options.category === 'education' &&
                 education.map((info, index) => {
                     return (
-                        <div key={`${index}-addeducation`}>
-                            <span>{info.date}</span>
-                            <span>{info.name}</span>
-                            <span>{info.where}</span>
-                        </div>
+                        <p key={`${index}-addeducation`}>
+                            {`${info.date} / ${info.name}/ ${info.where}`}
+                        </p>
                     );
                 }) 
             }
 
             { options.category === 'skills' && 
-                <h2>{options.categorySkill}</h2> && //eL h2 NO funciona
-                skills[options.categorySkill]['list'].map((info, index) => {
-                    return (
-                        <p key={`${index}-add-${JSON.stringify(options.categorySkill)}`}>
-                            {info}
-                        </p>
-                    );
-                })  
+                <div>
+                    <h2>{skills[options.categorySkill].name}</h2>
+                    {skills[options.categorySkill]['list'].map((info, index) => {
+                        return (
+                            <p key={`${index}-add-${JSON.stringify(options.categorySkill)}`}>
+                                {info}
+                            </p>
+                        );
+                    })}
+                </div>  
             }
         </div>
     );

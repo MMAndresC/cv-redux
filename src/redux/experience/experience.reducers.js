@@ -14,8 +14,11 @@ const experienceReducer = (state = INITIAL_STATE, action) => {
             return {...state, experience: [...experience, action.payload]};
         }
         case actions.DELETE_EXPERIENCE: {
-            const experienceFiltered = experience.filter(exp => exp !== action.payload);
-            return {...state, experience: [...experienceFiltered]}
+            let auxArray = [];
+            action.payload.forEach((data) =>{
+                auxArray = experience.filter(exp => exp !== data);
+            });
+            return {...state, experience: [...auxArray]}
         }
         default:
             return state;

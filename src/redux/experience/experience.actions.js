@@ -9,10 +9,10 @@ export const addExperience = (newExperience) => dispatch => {
     })
 };
 
-export const deleteExperience = (toDeleteExperience) => dispatch => {
+export const deleteExperience = (experiencesToDelete) => dispatch => {
     dispatch ({
         type: DELETE_EXPERIENCE,
-        payload: toDeleteExperience
+        payload: experiencesToDelete
     });
 };
 
