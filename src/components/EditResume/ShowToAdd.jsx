@@ -13,9 +13,12 @@ const ShowToAdd = () => {
             {options.category === 'experience' &&
                 experience.map((info, index) => {
                     return (
-                        <p key={`${index}-addexperience`}>
-                            {`${info.date} | ${info.name} | ${info.where} | ${info.description}`}
-                        </p>
+                        <div key={`${index}-addexperience`}>
+                            <span>{info.date}</span>
+                            <span>{info.name}</span>
+                            <span>{info.where}</span>
+                            <p>{info.description}</p>
+                        </div>
                     );
                 })
             }     
@@ -23,9 +26,11 @@ const ShowToAdd = () => {
             { options.category === 'education' &&
                 education.map((info, index) => {
                     return (
-                        <p key={`${index}-addeducation`}>
-                            {`${info.date} | ${info.name} | ${info.where}`}
-                        </p>
+                        <div className='add-span' key={`${index}-addeducation`}>
+                            <span>{info.date}</span>
+                            <span>{info.name}</span>
+                            <span>{info.where}</span>
+                        </div>
                     );
                 }) 
             }
@@ -35,9 +40,9 @@ const ShowToAdd = () => {
                     <h2>{skills[options.categorySkill].name}</h2>
                     {skills[options.categorySkill]['list'].map((info, index) => {
                         return (
-                            <p key={`${index}-add-${JSON.stringify(options.categorySkill)}`}>
-                                {info}
-                            </p>
+                            <div key={`${index}-add-${JSON.stringify(options.categorySkill)}`}>
+                                <span>{info}</span>
+                            </div>
                         );
                     })}
                 </div>  

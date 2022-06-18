@@ -25,16 +25,16 @@ const EditResume = () => {
     
 
     return (
-        <div>
-            <select onChange={handleChange}>
+        <div className='container'>
+            <select className='category-select' onChange={handleChange}>
                 <option value='add' default>Add</option>
                 <option value='edit'>Edit</option>
                 <option value='delete'>Delete</option>
             </select>
             <div className='container-show-buttons'>
-                <button onClick={() => dispatch(modifyCategory('skills'))}>Skills</button>
-                <button onClick={() => dispatch(modifyCategory('experience'))}>Experience</button>
-                <button onClick={() => dispatch(modifyCategory('education'))}>Education</button>
+                <button name='btn-category' id='skills' onClick={() => dispatch(modifyCategory('skills'))}>Skills</button>
+                <button name='btn-category' id='experience' onClick={() => dispatch(modifyCategory('experience'))}>Experience</button>
+                <button name='btn-category' id='education' onClick={() => dispatch(modifyCategory('education'))}>Education</button>
             </div>
             <div className='container-show'>
                 <div className='container-show-list'>

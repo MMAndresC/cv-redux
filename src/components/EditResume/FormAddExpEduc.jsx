@@ -38,9 +38,9 @@ const FormAddExpEduc = () => {
             </label>
             {options.category === 'experience' &&  
                 <label>
-                <span>Description:</span>
-                <textarea name='description' rows={10} cols={50} {...register('description')}></textarea>
-            </label>
+                    <span>Description:</span>
+                    <textarea name='description' rows={10} cols={50} {...register('description')}></textarea>
+                </label>
             }
             <button>Add</button>
         </form>

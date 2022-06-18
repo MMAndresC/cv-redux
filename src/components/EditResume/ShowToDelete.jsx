@@ -4,6 +4,7 @@ import { deleteEducation } from '../../redux/education/education.actions';
 import { deleteExperience } from '../../redux/experience/experience.actions';
 import { deleteSkills } from '../../redux/skills/skills.actions';
 import { modifyCategorySkill } from '../../redux/selectedOptions/selectedOption.actions';
+import './editresume.scss';
 
 
 const ShowToDelete = () => {
@@ -61,7 +62,10 @@ const ShowToDelete = () => {
                     return (
                         <label key={`${index}-deleteexperience`}>
                             <input type='checkbox' name='option' id={index} onChange={handleChecked}/>
-                            {`${info.date} ${info.name} ${info.where} ${info.description}`}
+                            <span>{info.date}</span>
+                            <span>{info.name}</span>
+                            <span>{info.where}</span>
+                            <p>{info.description}</p>
                         </label>
                     );
                 })
@@ -72,26 +76,28 @@ const ShowToDelete = () => {
                     return (
                         <label key={`${index}-deleteeducation`}>
                             <input type='checkbox' name='option' id={index} onChange={handleChecked}/>
-                            {`${info.date} ${info.name} ${info.where}`}
+                            <span>{info.date}</span>
+                            <span>{info.name}</span>
+                            <span>{info.where}</span>
                         </label>
                     );
                 })
             }    
 
             { options.category === 'skills' &&
-                <div> 
-                    <label>
+                <div className='delete-skills'> 
+                    
                         <select name='name' onChange={(event) => dispatch(modifyCategorySkill(event.target.value))}>
                             <option value='FSDeveloper' default>Full stack Developer</option>
                             <option value='BD'>BD</option>
                             <option value='learningLanguages'>Learning languages</option>
                         </select>
-                    </label>
+                    
                     {skills[options.categorySkill]['list'].map((info, index) => {
                         return (
                             <label key={`${index}-add-${JSON.stringify(options.categorySkill)}`}>
                                 <input type='checkbox' name='option' id={index} onChange={handleChecked}/> 
-                                {info}
+                                <span>{info}</span>
                             </label>
                         );
                     })} 

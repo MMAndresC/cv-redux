@@ -2,6 +2,7 @@
 import {useSelector, useDispatch} from 'react-redux';
 import { itemToEdit } from '../../redux/selectedOptions/selectedOption.actions';
 import {modifyCategorySkill} from '../../redux/selectedOptions/selectedOption.actions';
+import './editresume.scss';
 
 const ShowToEdit = () => {
     const {options} = useSelector(state => state);
@@ -27,7 +28,10 @@ const ShowToEdit = () => {
                     return (
                         <label key={`${index}-deleteexperience`}>
                             <input type='radio' name='option' id={index} onChange={handleSelected} />
-                            {`${info.date} ${info.name} ${info.where} ${info.description}`}
+                            <span>{info.date}</span>
+                            <span>{info.name}</span>
+                            <span>{info.where}</span>
+                            <p>{info.description}</p>
                         </label>
                     );
                 })
@@ -36,9 +40,11 @@ const ShowToEdit = () => {
             {options.category === 'education' &&
                 education.map((info, index) => {
                     return (
-                        <label key={`${index}-deleteeducation`}>
+                        <label className='edit-education' key={`${index}-deleteeducation`}>
                             <input type='radio' name='option' id={index} onChange={handleSelected}/>
-                            {`${info.date} ${info.name} ${info.where}`}
+                            <span>{info.date}</span>
+                            <span>{info.name}</span>
+                            <span>{info.where}</span>
                         </label>
                     );
                 })
