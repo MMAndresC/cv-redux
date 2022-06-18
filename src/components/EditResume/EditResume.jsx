@@ -22,7 +22,7 @@ const EditResume = () => {
     const handleChange = (event) => {
         dispatch(modifyOperation(event.target.value));
     }
-
+    
 
     return (
         <div>
@@ -48,6 +48,9 @@ const EditResume = () => {
 
             {/*Para mostrar el form edit solo cuando este seleccionado edit*/}
             {(options.operation === 'edit' &&  options.category === 'experience') && <FormEditExpEduc />}
+            {(options.operation === 'edit' &&  options.category === 'education') && <FormEditExpEduc />}
+            {(options.operation === 'edit' &&  options.category === 'skills') && <ShowToAdd />}
+           
 
 
             <button onClick={() => navigate('/resume')}>Go to Resume</button>

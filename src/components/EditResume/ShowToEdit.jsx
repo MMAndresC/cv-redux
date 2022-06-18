@@ -1,34 +1,24 @@
-import {useState} from 'react';
+
 import {useSelector, useDispatch} from 'react-redux';
 import { itemToEdit } from '../../redux/selectedOptions/selectedOption.actions';
+import {modifyCategorySkill} from '../../redux/selectedOptions/selectedOption.actions';
 
 const ShowToEdit = () => {
-    const state = useSelector(state => state);
     const {options} = useSelector(state => state);
     const {experience} = useSelector(state => state.experience);
     const {education} = useSelector(state => state.education);
     const dispatch = useDispatch();
-    const [edited, setEdited] = useState({});
-    const [checked, setChecked] = useState(false);
-    const {category, categorySkill} = options;
+    
 
     const handleSelected = (event) => {
-       dispatch(itemToEdit(experience[event.target.id]));
-     
- /*        if(category === 'skills'){ //El objeto de skill tiene diferente distribucion que education y experience
-            setToEdit(state[category][category][categorySkill].list[event.target.id]);
-        }else{
-            //console.log(event.target.id);
-            //console.log(state[category][category][event.target.id]);
-            
-            const aux = state[category][category][event.target.id];
-            //console.log('uax', aux);
-            //setToEdit(aux);
-            
-        }    */
+        if(options.category === 'experience'){
+            dispatch(itemToEdit(experience[event.target.id], event.target.id));
+        }
+        if(options.category === 'education'){
+            dispatch(itemToEdit(education[event.target.id], event.target.id));
+        }
     }
 
-  
     
     return(
         <div className='container-edit'>
@@ -54,7 +44,7 @@ const ShowToEdit = () => {
                 })
             }    
 
-  {/*           { options.category === 'skills' &&
+            { options.category === 'skills' &&
                 <div> 
                     <label>
                         <select name='name' onChange={(event) => dispatch(modifyCategorySkill(event.target.value))}>
@@ -63,16 +53,8 @@ const ShowToEdit = () => {
                             <option value='learningLanguages'>Learning languages</option>
                         </select>
                     </label>
-                    {skills[options.categorySkill]['list'].map((info, index) => {
-                        return (
-                            <label key={`${index}-add-${JSON.stringify(options.categorySkill)}`}>
-                                <input type='checkbox' name='option' id={index} /> 
-                                {info}
-                            </label>
-                        );
-                    })} 
                 </div> 
-            } */}
+            }
         </div>
     );
 }

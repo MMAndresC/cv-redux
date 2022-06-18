@@ -10,6 +10,7 @@ const INITIAL_STATE = {
 const optionReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
         case actions.MODIFY_CATEGORY: {
+            state.toEdit = {};
             return {...state, category: action.payload };
         }
         case actions.MODIFY_OPERATION: {
@@ -19,7 +20,8 @@ const optionReducer = (state = INITIAL_STATE, action) => {
             return {...state, categorySkill: action.payload}
         }
         case actions.EDIT_ITEM: {
-            state.toEdit = action.payload;
+            state.toEdit.data = action.payload.data;
+            state.toEdit.index = action.payload.index;
             return {...state}
         }
         default: 

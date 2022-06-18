@@ -17,10 +17,13 @@ export const deleteExperience = (experiencesToDelete) => dispatch => {
     });
 };
 
-export const editExperience = (experienceToEdit) => dispatch => {
+export const editExperience = (experienceToEdit, index) => dispatch => {
     dispatch({
         type: EDIT_EXPERIENCE,
-        payload: experienceToEdit
+        payload: {
+            experienceToEdit: experienceToEdit,
+            index : index
+        }
     });
 }
 

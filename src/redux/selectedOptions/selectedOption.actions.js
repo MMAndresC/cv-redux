@@ -26,10 +26,13 @@ export const modifyCategorySkill = (data) => dispatch => {
     });
 }
 
-export const itemToEdit = (data) => dispatch => {
+export const itemToEdit = (data, index) => dispatch => {
     dispatch({
         type: EDIT_ITEM,
-        payload: data
+        payload: {
+            data: data,
+            index: index
+        }
     });
 }
 

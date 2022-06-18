@@ -1,10 +1,14 @@
+
 import {CV} from '../../CV/CVFake';
 import * as actions from './experience.actions';
 
+
 const {experience} = CV; 
+
 
 const INITIAL_STATE = {
     experience: experience,
+    
 }
 
 const experienceReducer = (state = INITIAL_STATE, action) => {
@@ -22,8 +26,10 @@ const experienceReducer = (state = INITIAL_STATE, action) => {
             return {...state, experience: [...auxArray]}
         }
         case actions.EDIT_EXPERIENCE: {
-
-            return state;
+            const {experienceToEdit, index} = action.payload;
+            console.log('reducer', experienceToEdit, index);
+            state.experience[index] = experienceToEdit;
+            return {...state };
         }
         default:
             return state;
