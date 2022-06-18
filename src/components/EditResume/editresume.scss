@@ -1,6 +1,11 @@
 .bt-on{
     background-color: #1A688D;
-    border-bottom:#1A688D;
+    border-bottom:2px solid #1A688D;
+}
+
+.bt-off{
+    background-color: aqua;
+    border-bottom: 2px solid black;
 }
 
 .container{

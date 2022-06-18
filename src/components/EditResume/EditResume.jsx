@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 
 import { modifyCategory, modifyOperation } from '../../redux/selectedOptions/selectedOption.actions';
+import { changeStyleButton } from '../../redux/changeStyles/changeStyles.actions';
 
 import FormAddExpEduc from './FormAddExpEduc';
 import FormAddSkills from './FormAddSkills';
@@ -10,6 +11,8 @@ import FormEditExpEduc from './FormEditExpEduc';
 import ShowToAdd from './ShowToAdd';
 import ShowToDelete from './ShowToDelete';
 import ShowToEdit from './ShowToEdit';
+
+import './editresume.scss';
 
 
 
@@ -22,6 +25,13 @@ const EditResume = () => {
     const handleChange = (event) => {
         dispatch(modifyOperation(event.target.value));
     }
+
+    const handleClickCategory = (event) => {
+        const btnCategoryPrev = document.getElementById(`${options.category}`);
+        const btnCategoryNext = document.getElementById(`${event.target.id}`);
+        dispatch(changeStyleButton(btnCategoryPrev, btnCategoryNext));
+        dispatch(modifyCategory(event.target.id))
+    }
     
 
     return (
@@ -32,9 +42,9 @@ const EditResume = () => {
                 <option value='delete'>Delete</option>
             </select>
             <div className='container-show-buttons'>
-                <button name='btn-category' id='skills' onClick={() => dispatch(modifyCategory('skills'))}>Skills</button>
-                <button name='btn-category' id='experience' onClick={() => dispatch(modifyCategory('experience'))}>Experience</button>
-                <button name='btn-category' id='education' onClick={() => dispatch(modifyCategory('education'))}>Education</button>
+                <button name='btn-category' id='skills' className='btn-on' onClick={handleClickCategory}>Skills</button>
+                <button name='btn-category' id='experience' className='btn-off' onClick={handleClickCategory}>Experience</button>
+                <button name='btn-category' id='education' className='btn-off'onClick={handleClickCategory}>Education</button>
             </div>
             <div className='container-show'>
                 <div className='container-show-list'>
