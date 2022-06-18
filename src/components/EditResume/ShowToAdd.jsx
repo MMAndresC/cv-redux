@@ -14,7 +14,7 @@ const ShowToAdd = () => {
                 experience.map((info, index) => {
                     return (
                         <p key={`${index}-addexperience`}>
-                            {`${info.date} / ${info.name}/ ${info.where}/ ${info.description}`}
+                            {`${info.date} | ${info.name} | ${info.where} | ${info.description}`}
                         </p>
                     );
                 })
@@ -24,7 +24,7 @@ const ShowToAdd = () => {
                 education.map((info, index) => {
                     return (
                         <p key={`${index}-addeducation`}>
-                            {`${info.date} / ${info.name}/ ${info.where}`}
+                            {`${info.date} | ${info.name} | ${info.where}`}
                         </p>
                     );
                 }) 

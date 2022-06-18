@@ -5,6 +5,8 @@ import {useForm} from 'react-hook-form';
 import {addEducation} from '../../redux/education/education.actions';
 import {addExperience} from '../../redux/experience/experience.actions';
 
+import './editresume.scss'
+
 
 const FormAddExpEduc = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -21,7 +23,7 @@ const FormAddExpEduc = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className='form__add-educ-exp'>
             <label>
                 <span>Name:</span>
                 <input type='text' name='name' {...register('name')}></input>
@@ -37,10 +39,10 @@ const FormAddExpEduc = () => {
             {options.category === 'experience' &&  
                 <label>
                 <span>Description:</span>
-                <input type='text' name='description' {...register('description')}></input>
+                <textarea name='description' rows={10} cols={50} {...register('description')}></textarea>
             </label>
             }
-            <button>Save</button>
+            <button>Add</button>
         </form>
     );
 }

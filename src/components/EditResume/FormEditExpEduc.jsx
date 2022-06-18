@@ -2,8 +2,9 @@
 import {useDispatch, useSelector} from 'react-redux';
 import {useForm} from 'react-hook-form';
 import { useEffect } from 'react';
-import { useNavigate} from 'react-router-dom';
+import { editEducation } from '../../redux/education/education.actions';
 import { editExperience } from '../../redux/experience/experience.actions';
+import './editresume.scss';
 
 
 
@@ -12,27 +13,20 @@ const FormEditExpEduc = () => {
     const dispatch = useDispatch();
     const {options} = useSelector(state => state);
     const { register, handleSubmit, reset } = useForm();
-    const navigate = useNavigate();
-
-    
+        
     
     useEffect(() =>{ //Para que ponga el el form el item que esta seleccionado para editar
         reset(options.toEdit.data);
     },[options.toEdit.data])
 
 
-
     const onSubmit = (formData) => {
         if(options.category === 'experience'){
             dispatch(editExperience(formData, options.toEdit.index));
-            console.log('toedit', formData);
-            reset(); 
-            navigate('/editresume');
-        }else{
-            //dispatch(addEducation(formData));
         }
-        
-        //   
+        if(options.category === 'education'){
+            dispatch(editEducation(formData, options.toEdit.index));
+        }
     }
 
     return (
@@ -52,11 +46,11 @@ const FormEditExpEduc = () => {
             {options.category === 'experience' &&  
                 <label>
                 <span>Description:</span>
-                <input type='text' name='description' {...register('description')}></input>
+                <textarea name='description' rows={10} cols={50} {...register('description')}></textarea>
             </label>
             }
             
-            <button>Save changes</button>
+            <button>Save</button>
         </form>
     );
 }

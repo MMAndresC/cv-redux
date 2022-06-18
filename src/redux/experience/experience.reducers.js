@@ -27,7 +27,6 @@ const experienceReducer = (state = INITIAL_STATE, action) => {
         }
         case actions.EDIT_EXPERIENCE: {
             const {experienceToEdit, index} = action.payload;
-            console.log('reducer', experienceToEdit, index);
             state.experience[index] = experienceToEdit;
             return {...state };
         }

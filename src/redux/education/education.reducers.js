@@ -20,6 +20,11 @@ const educationReducers = (state=INITIAL_STATE, action) => {
             });
             return {...state, education: [...auxArray]}
         }
+        case actions.EDIT_EDUCATION: {
+            const {educationToEdit, index} = action.payload;
+            state.education[index] = educationToEdit;
+            return {...state };
+        }
         default:
             return state;
     }
