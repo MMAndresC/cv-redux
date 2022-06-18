@@ -11,7 +11,7 @@ import SectionSeparator from './SectionSeparator/SectionSeparator';
 import Skills from './Skills/Skills';
 
 const Resume = () => {
-    const {personal, skills, education, experience} = CV;
+    const {personal, skills} = CV;
     const {name, surname, aboutMe, image} = personal; 
     const [showEducation, setShowEducation] = useState(true);
     return (
@@ -26,7 +26,7 @@ const Resume = () => {
             <Skills skills={skills}/>
             <button onClick={() => setShowEducation(true)}>Education</button>
             <button onClick={() => setShowEducation(false)}>Experience</button>
-            {showEducation ? <Education education={education}/> : <Experience experience={experience}/>} 
+            {showEducation ? <Education/> : <Experience/>} 
         </div>
     );
 }

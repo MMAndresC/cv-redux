@@ -1,14 +1,15 @@
+
 import {useDispatch, useSelector} from 'react-redux';
 import {useForm} from 'react-hook-form';
 
 import {addEducation} from '../../redux/education/education.actions';
 import {addExperience} from '../../redux/experience/experience.actions';
 
-const FormResume = () => {
-    const { register, handleSubmit } = useForm();
+
+const FormAddExpEduc = () => {
+    const { register, handleSubmit, reset } = useForm();
     const dispatch = useDispatch();
     const {options} = useSelector(state => state);
-    
 
     const onSubmit = (formData) => {
         if(options.category === 'experience'){
@@ -16,6 +17,7 @@ const FormResume = () => {
         }else{
             dispatch(addEducation(formData));
         }
+        reset();    
     }
 
     return (
@@ -26,7 +28,7 @@ const FormResume = () => {
             </label>
             <label>
                 <span>Date:</span>
-                <input type='date' name='date' {...register('date')}></input>
+                <input type='text' name='date' {...register('date')}></input>
             </label>
             <label>
                 <span>Where:</span>
@@ -43,4 +45,4 @@ const FormResume = () => {
     );
 }
 
-export default FormResume;
+export default FormAddExpEduc;

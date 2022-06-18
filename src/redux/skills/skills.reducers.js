@@ -10,18 +10,16 @@ const INITIAL_STATE = {
 };
 
 
-const skillsReducer = (state=INITIAL_STATE, action) => { //FALTA HACER LA DIVISION POR EL SELECT
+const skillsReducer = (state=INITIAL_STATE, action) => { 
     switch(action.type){
         case actions.ADD_SKILL: { 
             const {newSkill, selector} = action.payload;
             const aux = newSkill.list;
             state.skills[selector].list.push(aux);
-            return state;
+            return {...state};
         }
-        case actions.DELETE_SKILLS: { //aun no hecho
+        case actions.DELETE_SKILLS: { 
             const {skillsToDelete, selector} = action.payload;
-            //console.log('lo de borrar',skillsToDelete);
-            //console.log('donde borrar',selector);
             let auxArray = skills[selector]['list'];
             skillsToDelete.forEach((data) =>{
                 auxArray = auxArray.filter(exp => exp !== data);

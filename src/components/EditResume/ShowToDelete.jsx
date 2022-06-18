@@ -14,8 +14,7 @@ const ShowToDelete = () => {
     const {skills} = useSelector(state => state.skills);
     const state = useSelector(state => state);
     const [checkedList, setCheckedList] = useState([]);
-    const {category} = options;
-    const {categorySkill} = options;
+    const {category, categorySkill} = options;
 
     const handleChecked = (event) => { //Añade o quita de la var de estado las opciones que se marcan o desmarcan
         if(event.target.checked){ //Cuando se marca

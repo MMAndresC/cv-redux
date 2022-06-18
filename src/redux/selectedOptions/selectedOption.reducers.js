@@ -3,8 +3,8 @@ import * as actions from './selectedOption.actions';
 const INITIAL_STATE = {
     category: 'skills',
     operation: 'add',
-    skills: true,
-    categorySkill: 'FSDeveloper'
+    categorySkill: 'FSDeveloper',
+    toEdit: {}
 };
 
 const optionReducer = (state = INITIAL_STATE, action) => {
@@ -18,7 +18,11 @@ const optionReducer = (state = INITIAL_STATE, action) => {
         case actions.MODIFY_SKILL: {
             return {...state, categorySkill: action.payload}
         }
-        default:
+        case actions.EDIT_ITEM: {
+            state.toEdit = action.payload;
+            return {...state}
+        }
+        default: 
             return state;
     }
     

@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { addSkill } from '../../redux/skills/skills.actions';
 import { modifyCategorySkill } from '../../redux/selectedOptions/selectedOption.actions';
 
-const FormSkills = () => {
+const FormAddSkills = () => {
     const {register, handleSubmit} = useForm();
     const dispatch = useDispatch();
     const {categorySkill} = useSelector(state => state.options);
@@ -31,4 +31,4 @@ const FormSkills = () => {
     );
 }
 
-export default FormSkills;
+export default FormAddSkills;

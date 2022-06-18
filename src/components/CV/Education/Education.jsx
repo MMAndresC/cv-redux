@@ -1,7 +1,7 @@
+import {useSelector} from 'react-redux';
 
-
-const Education = ({education}) => {
-    
+const Education = () => {
+    const {education} = useSelector(state => state.education);
     return (
         <>
             {education.map((info, index) => {

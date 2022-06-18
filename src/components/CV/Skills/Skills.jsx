@@ -1,8 +1,10 @@
-import {Carousel} from 'react-responsive-carousel'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import {useSelector} from 'react-redux';
+import {Carousel} from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 
-const Skills = ({skills}) => {
+const Skills = () => {
+    const {skills} = useSelector(state => state.skills);
     const {FSDeveloper, BD, learningLanguages} = skills;
     return (
        <Carousel showThumbs = {false}>

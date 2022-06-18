@@ -1,5 +1,7 @@
+import {useSelector} from 'react-redux';
 
-const Experience = ({experience}) => {
+const Experience = () => {
+    const {experience} = useSelector(state => state.experience);
     return (
         <>
             {experience.map((info, index) => {

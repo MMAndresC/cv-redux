@@ -9,7 +9,9 @@ const INITIAL_STATE = {
 const educationReducers = (state=INITIAL_STATE, action) => {
     switch(action.type){
         case actions.ADD_EDUCATION : {
-            return {...state, education: [...education, action.payload]}
+            const aux = state.education; //No conseguia que renderizara de nuevo, con ese return ya me sale
+            aux.push(action.payload);
+            return {...state, education:[...aux]}
         }
         case actions.DELETE_EDUCATION: {
             let auxArray = state.education;

@@ -10,7 +10,9 @@ const INITIAL_STATE = {
 const experienceReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
         case actions.ADD_EXPERIENCE: {
-            return {...state, experience: [...experience, action.payload]};
+            const aux = state.experience; //No conseguia que renderizara de nuevo, con ese return ya me sale
+            aux.push(action.payload);
+            return {...state, experience:[...aux]}
         }
         case actions.DELETE_EXPERIENCE: {
             let auxArray = state.experience;
@@ -18,6 +20,10 @@ const experienceReducer = (state = INITIAL_STATE, action) => {
                 auxArray = auxArray.filter(exp => exp !== data);
             });
             return {...state, experience: [...auxArray]}
+        }
+        case actions.EDIT_EXPERIENCE: {
+
+            return state;
         }
         default:
             return state;

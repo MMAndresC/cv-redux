@@ -3,6 +3,7 @@
 export const MODIFY_CATEGORY = 'MODIFY_CATEGORY';
 export const MODIFY_OPERATION = 'MODIFY_OPERATION';
 export const MODIFY_SKILL = 'MODIFY_SKILL';
+export const EDIT_ITEM = 'EDIT_ITEM';
 
 export const modifyCategory = (data) => dispatch => {
     dispatch({
@@ -24,3 +25,11 @@ export const modifyCategorySkill = (data) => dispatch => {
         payload: data
     });
 }
+
+export const itemToEdit = (data) => dispatch => {
+    dispatch({
+        type: EDIT_ITEM,
+        payload: data
+    });
+}
+
