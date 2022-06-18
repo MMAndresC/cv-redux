@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 
@@ -19,6 +20,9 @@ import './editresume.scss';
 const EditResume = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const [styleOn, setStyleOn] = useState('btn-on');
+    
+   
     const { options } = useSelector(state => state);
 
 
@@ -27,10 +31,16 @@ const EditResume = () => {
     }
 
     const handleClickCategory = (event) => {
-        const btnCategoryPrev = document.getElementById(`${options.category}`);
-        const btnCategoryNext = document.getElementById(`${event.target.id}`);
-        dispatch(changeStyleButton(btnCategoryPrev, btnCategoryNext));
-        dispatch(modifyCategory(event.target.id))
+    /*     const btn = document.querySelectorAll('[name=btn-category]');
+        btn.forEach((item) => {
+            if(){
+
+            }else{
+                setStyleOn('btn-off');
+            }
+        })
+        dispatch(modifyCategory(event.target.id)) */
+        setStyleOn('btn-on');
     }
     
 
@@ -42,9 +52,9 @@ const EditResume = () => {
                 <option value='delete'>Delete</option>
             </select>
             <div className='container-show-buttons'>
-                <button name='btn-category' id='skills' className='btn-on' onClick={handleClickCategory}>Skills</button>
-                <button name='btn-category' id='experience' className='btn-off' onClick={handleClickCategory}>Experience</button>
-                <button name='btn-category' id='education' className='btn-off'onClick={handleClickCategory}>Education</button>
+                <button name='btn-category' id='skills' className={styleOn} onClick={handleClickCategory}>Skills</button>
+                <button name='btn-category' id='experience' onClick={() => dispatch(modifyCategory('experience'))}>Experience</button>
+                <button name='btn-category' id='education' onClick={() => dispatch(modifyCategory('education'))}>Education</button>
             </div>
             <div className='container-show'>
                 <div className='container-show-list'>
