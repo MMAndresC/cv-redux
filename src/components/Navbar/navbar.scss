@@ -1,0 +1,35 @@
+
+nav{
+    padding: 5vh 0;
+    background-color: rgb(243, 243, 243);
+    display:flex;
+    justify-content: flex-end;
+}
+
+.link{
+    padding: 2vh 2vw;
+    background-color: #1A688D;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-color: white;
+    }
+    
+}
+
+.first{
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-right: 2px solid white;
+}
+
+.middle{
+    border-right: 2px solid white;
+}
+
+.last{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}

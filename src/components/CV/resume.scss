@@ -1,0 +1,223 @@
+.container-cv{
+    background-color: rgb(243, 243, 243);
+}
+
+
+//Header
+.header-cv{
+    
+    h1{
+        font-size: 5rem;
+    }
+}
+
+//End-Header
+
+
+//Separador
+.separator{
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.line{
+    height: 2px;
+    flex: 8;
+    background-color: rgb(17, 152, 205);
+}
+
+.section{
+    flex: 4;
+
+    &-title{
+        background-color: #0e4d6b;
+        color: white;
+        width: 60%;
+        margin-left: 20%;
+        border: 2px solid #0e4d6b;
+        border-radius: 60px 0;
+    }
+}
+//End-Separador
+
+
+//Personal
+.container-cv-personal{
+    background-color: white;
+    
+    &-data{
+        display: flex;
+    }
+    
+}
+
+.personal-contact{
+    flex:4;
+
+    &-data{
+        width:60%;
+        margin-left: 20%;
+        display: flex;
+        flex-direction: column;
+
+        &-div{
+            width: 60%;
+            margin-left: 20%;
+            text-align: justify;
+        }
+    }
+}
+
+.personal-contact-logos{ 
+    display: flex;
+    justify-content: center;
+
+    a{
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    &-github{
+        width: 45px;
+        height: 45px;
+        
+    }
+
+    &-email{
+        width: 40px;
+        height: 40px;
+        
+    }
+}
+
+
+.personal-aboutme{
+    flex:8;
+    display:flex;
+    margin-bottom: 2%;
+
+    &-image{
+        flex:2;
+        height: 300px;
+    }
+
+    img{
+       height: 100%;
+    }
+
+    &-container-data{
+        flex:5;
+    }
+    
+}
+
+.personal-aboutme-container-data{
+    display:flex;
+    flex-direction: column;
+    
+
+    p{
+        text-align: left;
+    }
+}
+
+////End-Personal
+
+
+/////Skills-Carousel
+
+.container-carousel{
+    padding-top:2%;
+    padding-bottom: 5%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    
+}
+
+//Buttons selection Education-Experience
+
+.container-btn-show{
+    background-color: white;
+    height: 5vh;
+    width: 100vw;
+    
+}
+
+.btn-show-education, .btn-show-experience{
+    background-color: #0e4d6b;
+    color: white;
+    height: 5vh;
+    width: 20vw;
+    font-size: larger;
+
+    &:hover{
+        text-decoration: underline;
+        text-decoration-color: white;
+    }
+}
+
+.btn-show-education{
+    border-radius: 60% 0 0 0;
+    border-right: 2px solid white;
+    border-left: 2px solid #0e4d6b;
+    border-top: 2px solid #0e4d6b;
+    border-bottom: 2px solid #0e4d6b;
+    margin-right: 2px;
+    
+}
+
+.btn-show-experience{
+    border-radius: 0 60% 0 0;
+    border-left: 2px solid white;
+    border-right: 2px solid #0e4d6b;
+    border-top: 2px solid #0e4d6b;
+    border-bottom: 2px solid #0e4d6b;
+    margin-left:2px;
+}
+
+//////End-buttons-show
+
+
+////Education
+
+.container-education {
+
+        .separator-mini{
+            padding-top:2%;
+            background-color: #0e4d6b;
+        }
+
+
+        .section-mini{
+            flex:3;
+            display: flex;
+            margin-right: 2%;
+            justify-content: flex-end;
+        }
+        
+        .section-title-mini{
+                background-color:rgb(17, 152, 205);
+                color: white;
+                width: 40%;
+                
+                border: 2px solid rgb(17, 152, 205);
+                border-radius: 60px 0;
+            }      
+}
+
+.card-education{
+    display: flex;
+    flex-direction: column;
+
+    &-header{
+        display: flex;
+        
+    }
+}
+
+/////End-education
+
+
+

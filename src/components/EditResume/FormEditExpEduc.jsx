@@ -17,6 +17,7 @@ const FormEditExpEduc = () => {
     
     useEffect(() =>{ //Para que ponga el el form el item que esta seleccionado para editar
         reset(options.toEdit.data);
+        //eslint-disable-next-line
     },[options.toEdit.data])
 
 
