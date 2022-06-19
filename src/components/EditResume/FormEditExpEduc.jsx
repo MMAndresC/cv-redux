@@ -50,7 +50,7 @@ const FormEditExpEduc = () => {
             </label>
             }
             
-            <button>Save</button>
+            <button className='btn-edit'>Save</button>
         </form>
     );
 }

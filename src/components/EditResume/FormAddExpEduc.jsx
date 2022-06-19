@@ -42,7 +42,7 @@ const FormAddExpEduc = () => {
                     <textarea name='description' rows={10} cols={50} {...register('description')}></textarea>
                 </label>
             }
-            <button>Add</button>
+            <button className='btn-add'>Add</button>
         </form>
     );
 }

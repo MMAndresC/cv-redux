@@ -87,7 +87,7 @@ const ShowToDelete = () => {
             { options.category === 'skills' &&
                 <div className='delete-skills'> 
                     
-                        <select name='name' onChange={(event) => dispatch(modifyCategorySkill(event.target.value))}>
+                        <select name='name' className='inside-select' onChange={(event) => dispatch(modifyCategorySkill(event.target.value))}>
                             <option value='FSDeveloper' default>Full stack Developer</option>
                             <option value='BD'>BD</option>
                             <option value='learningLanguages'>Learning languages</option>
@@ -103,7 +103,7 @@ const ShowToDelete = () => {
                     })} 
                 </div> 
             }
-            <button onClick={handleDelete}>Delete selectioned</button> 
+            <button className='btn-delete' onClick={handleDelete}>Delete selectioned</button> 
         </div>
     );
 }

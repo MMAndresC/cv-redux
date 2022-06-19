@@ -16,7 +16,7 @@ const FormAddSkills = () => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <label>
-                <select name='name' onChange={(event) => dispatch(modifyCategorySkill(event.target.value))}>
+                <select name='name' className='select-form-add' onChange={(event) => dispatch(modifyCategorySkill(event.target.value))}>
                     <option value='FSDeveloper' default>Full stack Developer</option>
                     <option value='BD'>BD</option>
                     <option value='learningLanguages'>Learning languages</option>
@@ -26,7 +26,7 @@ const FormAddSkills = () => {
                 <span>Name:</span>
                 <input type='text' name='list' {...register('list')}></input>
             </label>
-            <button>Save</button>
+            <button className='btn-add' >Add</button>
         </form>
     );
 }

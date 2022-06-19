@@ -26,15 +26,15 @@ const EditResume = () => {
 
     return (
         <div className='container'>
-            <select className='category-select' onChange={handleChange}>
+            <select className='select-category' onChange={handleChange}>
                 <option value='add' default>Add</option>
                 <option value='edit'>Edit</option>
                 <option value='delete'>Delete</option>
             </select>
             <div className='container-show-buttons'>
-                <button name='btn-category' id='skills' onClick={() => dispatch(modifyCategory('skills'))}>Skills</button>
-                <button name='btn-category' id='experience' onClick={() => dispatch(modifyCategory('experience'))}>Experience</button>
-                <button name='btn-category' id='education' onClick={() => dispatch(modifyCategory('education'))}>Education</button>
+                <button name='btn-category' id='skills' className='btn-category' onClick={() => dispatch(modifyCategory('skills'))}>Skills</button>
+                <button name='btn-category' id='experience' className='btn-category' onClick={() => dispatch(modifyCategory('experience'))}>Experience</button>
+                <button name='btn-category' id='education' className='btn-category' onClick={() => dispatch(modifyCategory('education'))}>Education</button>
             </div>
             <div className='container-show'>
                 <div className='container-show-list'>
@@ -56,7 +56,7 @@ const EditResume = () => {
                 </div>
             </div>
 
-            <button onClick={() => navigate('/resume')}>Go to Resume</button>
+            <button className='btn-goback' onClick={() => navigate('/resume')}>Go to Resume</button>
         </div>
     );
 }

@@ -53,7 +53,7 @@ const ShowToEdit = () => {
             { options.category === 'skills' &&
                 <div> 
                     <label>
-                        <select name='name' onChange={(event) => dispatch(modifyCategorySkill(event.target.value))}>
+                        <select name='name' className='inside-select' onChange={(event) => dispatch(modifyCategorySkill(event.target.value))}>
                             <option value='FSDeveloper' default>Full stack Developer</option>
                             <option value='BD'>BD</option>
                             <option value='learningLanguages'>Learning languages</option>

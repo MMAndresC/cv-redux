@@ -1,6 +1,95 @@
-.bt-on{
+.btn-on{
     background-color: #1A688D;
     border-bottom:#1A688D;
+}
+
+.btn-category{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    &:hover{
+        font-size: 1rem;
+        font-weight: bolder;
+        text-decoration: underline;
+        background-color: rgba(215, 210, 210, 0.978);
+    }
+}
+
+
+
+.btn-goback{
+    border-radius: 10px;
+    margin-left: -50%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 1vh 3vw;
+    background-image: url('./black-felt.png');
+    font-size: 1.5rem;
+
+    &:hover{
+        font-size: 2rem;
+        font-weight: bolder;
+        text-decoration: underline;
+        background-color: rgba(215, 210, 210, 0.978);
+    }
+}
+
+.btn-edit{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 4vh;
+}
+
+.btn-add, .btn-delete, .btn-edit{
+    margin-left: 50%;
+    margin-top: 3vh;
+    transform: translateX(-50%);
+    padding: 1vh 3vw;
+    border-radius: 10px;  
+    background-image: url('./black-felt.png');  
+    font-size: 1rem;   
+
+    &:hover{
+        font-size: 1.5rem;
+        font-weight: bolder;
+        text-decoration: underline;
+        background-color: rgba(215, 210, 210, 0.978);
+    }
+}
+
+.select-category{
+    margin-top: 10vh;
+    width: 30vw;
+    height: 5vh;
+    text-align: center;
+    font-size: 2rem;
+    background-image: url('./black-felt.png');
+    border-radius: 10px;
+
+        &:hover{
+            background-color: rgba(215, 210, 210, 0.978);
+            text-decoration: underline;
+        }
+}
+
+
+.select-form-add{
+    background-image: url('./black-felt.png');
+    border-radius: 10px;
+    margin: 5vh 5vw;
+    height: 30px;
+    width: 15vw;
+}
+
+
+.inside-select{
+    background-color: #1A688D;
+    background-image: url('./black-felt.png');
+    height: 30px;
+    width: 15vw;
+    margin: 5vh 5vw;
+    border-radius: 10px;
+
 }
 
 .container{
@@ -116,15 +205,7 @@
             }
 
         }
-
-        button{
-            margin-left: 50%;
-            margin-top: 3vh;
-            transform: translateX(-50%);
-            padding: 0 3vw;
-        }
-            
-        
+    
 }
 
 .form-text-description{
@@ -158,11 +239,6 @@
         margin-right: 10px;
     }
 
-    select{
-        margin: 5vh 5vw;
-        height: 30px;
-        width: 10vw;
-    }
 }
 
 .container-delete{
@@ -215,16 +291,10 @@
             height: 30px;
             width: 10vw;
             margin-left: 40%;
+            border-radius: 10px;
         }
     }
 }
 
-.category-select{
-    margin-top: 10vh;
-    width: 30vw;
-    height: 5vh;
-    text-align: center;
-    font-size: larger;
-}
 
 
