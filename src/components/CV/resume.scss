@@ -183,6 +183,9 @@
 ////Education
 
 .container-education {
+        padding-bottom:15%;
+        background-color: #0e4d6b;
+        color: white;
 
         .separator-mini{
             padding-top:2%;
@@ -210,14 +213,109 @@
 .card-education{
     display: flex;
     flex-direction: column;
+    padding-top:5%;
 
     &-header{
         display: flex;
+        width:60%;
+        align-items: center;
+        margin-left: 20%;
+
+        .education-name{
+            width:20vw;
+            text-align: justify;
+            padding-left: 5%;
+        }
+
+        .education-date{
+            width:10vw;
+            border: 2px solid rgb(17, 152, 205);
+            background-color: rgb(17, 152, 205);
+        }
+
+        .education-where{
+            width:20vw;
+            text-align: justify;
+        }
         
     }
 }
 
 /////End-education
 
+
+////Show experience
+
+.container-experience{
+    padding-bottom:15%;
+    background-color: #0e4d6b;
+    color: white;
+
+    .separator-mini{
+        padding-top:2%;
+        background-color: #0e4d6b;
+    }
+
+
+    .section-mini{
+        flex:3;
+        display: flex;
+        margin-right: 2%;
+        justify-content: flex-end;
+    }
+    
+    .section-title-mini{
+            background-color:rgb(17, 152, 205);
+            color: white;
+            width: 40%;
+            
+            border: 2px solid rgb(17, 152, 205);
+            border-radius: 60px 0;
+        }      
+}
+
+.card-experience{
+    display: flex;
+    flex-direction: column;
+    padding-top:5%;
+
+    &-header{
+        display: flex;
+        width:60%;
+        align-items: center;
+        margin-left: 20%;
+
+        .experience-name{
+            width:20vw;
+            text-align: justify;
+            padding-left: 5%;
+        }
+
+        .experience-date{
+            width:10vw;
+            border: 2px solid rgb(17, 152, 205);
+            background-color: rgb(17, 152, 205);
+        }
+
+        .experience-where{
+            width:20vw;
+            text-align: justify;
+        }
+    }
+
+    .card-description{
+        width:60%;
+        margin-left: 20%;
+    }
+
+    .experience-description{
+        width: 60%;
+        margin-left: 20%;
+        text-align: justify;
+    }
+}
+
+
+////End-Show experience
 
 

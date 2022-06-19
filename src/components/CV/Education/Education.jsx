@@ -1,26 +1,27 @@
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import SectionSeparator from '../SectionSeparator/SectionSeparator';
 
 import '../resume.scss';
 
 const Education = () => {
-    const {education} = useSelector(state => state.education);
+    const { education } = useSelector(state => state.education);
     return (
         <div className='container-education'>
-            <SectionSeparator title={'Education'}/>
-        
+            <SectionSeparator title={'Education'} />
+
             {education.map((info, index) => {
                 return (
-                    <div className='card-education' key = {`${index}${JSON.stringify(info.name)}`}>
+                    <div className='card-education' key={`${index}${JSON.stringify(info.name)}`}>
                         <div className='card-education-header'>
-                            <h3>{info.name}</h3>
-                            <p>{info.date}</p>
+                            <p className='education-date' >{info.date}</p>
+                            <h3 className='education-name'>{info.name}</h3>
+                            <p className='education-where'>{info.where}</p>
                         </div>
-                        <p>{info.where}</p>
                     </div>
                 );
             })}
         </div>
+
     );
 }
 
