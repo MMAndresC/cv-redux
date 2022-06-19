@@ -1,4 +1,4 @@
-
+import {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 
@@ -17,10 +17,21 @@ const EditResume = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { options } = useSelector(state => state);
-
+ 
+  const [category, setCategory] = useState('skills');
 
     const handleChange = (event) => {
         dispatch(modifyOperation(event.target.value));
+    }
+
+    const changeCategory = (category) =>{
+        setCategory(category);
+        dispatch(modifyCategory(category));
+        
+    }
+
+    const getCategoryClassName = (elementCategory) => {
+        return `btn-category ${elementCategory === category ? 'btn-category--selected' : ''} `
     }
     
 
@@ -32,9 +43,9 @@ const EditResume = () => {
                 <option value='delete'>Delete</option>
             </select>
             <div className='container-show-buttons'>
-                <button name='btn-category' id='skills' className='btn-category' onClick={() => dispatch(modifyCategory('skills'))}>Skills</button>
-                <button name='btn-category' id='experience' className='btn-category' onClick={() => dispatch(modifyCategory('experience'))}>Experience</button>
-                <button name='btn-category' id='education' className='btn-category' onClick={() => dispatch(modifyCategory('education'))}>Education</button>
+                <button name='btn-category' id='skills' className={getCategoryClassName('skills')} onClick={() => changeCategory('skills')}>Skills</button>
+                <button name='btn-category' id='experience' className={getCategoryClassName('experience')} onClick={() => changeCategory('experience')}>Experience</button>
+                <button name='btn-category' id='education' className={getCategoryClassName('education')} onClick={() => changeCategory('education')}>Education</button>
             </div>
             <div className='container-show'>
                 <div className='container-show-list'>

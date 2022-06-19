@@ -13,6 +13,10 @@
         text-decoration: underline;
         background-color: rgba(215, 210, 210, 0.978);
     }
+
+    &--selected{
+        background-color: aqua;
+    }
 }
 
 

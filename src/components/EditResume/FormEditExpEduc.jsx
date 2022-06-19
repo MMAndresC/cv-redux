@@ -28,10 +28,11 @@ const FormEditExpEduc = () => {
         if(options.category === 'education'){
             dispatch(editEducation(formData, options.toEdit.index));
         }
+        document.querySelector('#edit-form').reset();
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form id='edit-form' onSubmit={handleSubmit(onSubmit)}>
             <label>
                 <span>Name:</span>
                 <input type='text' name='name' {...register('name')}></input>

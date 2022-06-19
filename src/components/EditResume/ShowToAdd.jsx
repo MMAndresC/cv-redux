@@ -7,6 +7,8 @@ const ShowToAdd = () => {
     const {experience} = useSelector(state => state.experience);
     const {education} = useSelector(state => state.education);
     const {skills} = useSelector(state => state.skills);
+
+   
     return(
         
         <div className='container-add'>
